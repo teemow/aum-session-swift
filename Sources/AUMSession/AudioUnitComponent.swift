@@ -8,7 +8,7 @@ import Foundation
 /// (manufacturer/version/type names, tags) can carry it on the same identity —
 /// they are never populated by the parser itself.
 ///
-/// This mirrors the same identity the mcp-midi-controller wire contract uses
+/// This mirrors the same identity the roadie wire contract uses
 /// (Go `device.ProbeComponent`); each repo pins its own copy of the contract.
 public struct AudioUnitComponent: Codable, Equatable {
     public var type: String

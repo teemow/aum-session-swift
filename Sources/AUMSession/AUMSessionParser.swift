@@ -3,9 +3,9 @@ import Foundation
 // On-device reader for AUM sessions (.aumproj) and standalone MIDI mappings
 // (.aum_midimap). It decodes the NSKeyedArchiver graph (BinaryPlist.swift) and
 // walks it into the same flat AUMSessionMap the inspector renders — so the app
-// reads and inspects sessions entirely locally, without the daemon.
+// reads and inspects sessions entirely locally, without the server.
 //
-// This is a faithful port of the Go read model in the mcp-midi-controller repo
+// This is a faithful port of the Go read model in the roadie repo
 // (internal/aum: archive.go, session.go, spec.go, midimap.go). The graph walk,
 // the two container shapes (keyed-object dict vs Foundation NS.keys/NS.objects),
 // the component-blob decode and the two mapping-leaf encodings all mirror that

@@ -6,11 +6,11 @@ A standalone, on-device **reader for [AUM](https://kymatica.com/apps/aum) projec
 It decodes the binary-plist / `NSKeyedArchiver` object graph an AUM file is and
 walks it into a flat [`AUMSessionMap`](Sources/AUMSession/AUMSessionModels.swift):
 mixer channels, hosted plugin nodes, assigned MIDI mappings, and the MIDI
-routing matrix. No daemon, no `NSKeyedUnarchiver` (which would need AUM's private
+routing matrix. No server, no `NSKeyedUnarchiver` (which would need AUM's private
 classes registered), no SwiftUI — just `Foundation`, so it builds and tests on
 Linux and Apple platforms alike.
 
-This is a faithful port of the Go read model in `mcp-midi-controller`
+This is a faithful port of the Go read model in `roadie`
 (`internal/aum`); the Go library stays the source of truth for the format, this
 is the read-only subset a host app needs on-device.
 

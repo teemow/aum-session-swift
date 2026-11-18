@@ -2,9 +2,9 @@ import Foundation
 
 // The parsed, flat read model of one AUM session, produced on-device by
 // AUMSessionParser from the binary plist. These types mirror the Go
-// aum.SessionMap / ChannelInfo / NodeInfo / MappingInfo (mcp-midi-controller,
+// aum.SessionMap / ChannelInfo / NodeInfo / MappingInfo (roadie,
 // internal/aum/session.go). The Codable conformance is retained for convenience
-// (e.g. debug dumps), not because any daemon supplies them.
+// (e.g. debug dumps), not because any server supplies them.
 //
 // Privacy: titles, channel names and node component sets are an installation
 // snapshot. They are meant to be rendered in-UI but never logged or committed.
@@ -235,7 +235,7 @@ public struct MappingInfo: Codable, Equatable, Identifiable {
         max = try c.decodeIfPresent(Double.self, forKey: .max) ?? 0
         autoToggle = try c.decodeIfPresent(Bool.self, forKey: .autoToggle) ?? false
         enabled = try c.decodeIfPresent(Bool.self, forKey: .enabled) ?? false
-        // Trust the daemon's label when present; otherwise derive it. Sessions
+        // Trust the server's label when present; otherwise derive it. Sessions
         // returned over the wire are version-13 (specState), so the specState
         // enum is the right fallback.
         let decoded = try c.decodeIfPresent(String.self, forKey: .typeName) ?? ""
