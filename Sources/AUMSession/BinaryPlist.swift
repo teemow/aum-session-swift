@@ -2,7 +2,7 @@ import Foundation
 
 // A self-contained Apple binary-property-list (bplist00) decoder. AUM's .aumproj
 // and .aum_midimap files are bplists whose top level is an NSKeyedArchiver object
-// graph; this lets the app read them on-device, with no daemon and no Foundation
+// graph; this lets the app read them on-device, with no server and no Foundation
 // NSKeyedUnarchiver (which would need AUM's private classes registered).
 //
 // It mirrors the Go side's approach (internal/aum/archive.go, which leans on

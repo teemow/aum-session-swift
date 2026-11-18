@@ -6,10 +6,10 @@ import PackageDescription
 //
 // It decodes the bplist/NSKeyedArchiver graph an AUM file is and walks it into a
 // flat `AUMSessionMap` (channels, nodes, MIDI mappings, routing). Pure Foundation
-// — no daemon, no NSKeyedUnarchiver (which would need AUM's private classes), no
+// — no server, no NSKeyedUnarchiver (which would need AUM's private classes), no
 // SwiftUI. It builds and tests on Linux and Apple platforms alike.
 //
-// This is a faithful port of the Go read model in mcp-midi-controller
+// This is a faithful port of the Go read model in roadie
 // (internal/aum: archive.go, session.go, spec.go, midimap.go); the Go library
 // stays the source of truth for the format, this is the read-only subset.
 let package = Package(
